@@ -1,0 +1,632 @@
+/* ================================================================
+   RESET & GLOBAL
+   ================================================================ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+.page {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ================================================================
+   DIAMOND PATTERN (reused in fitness & nutrition)
+   ================================================================ */
+.diamond {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient( 45deg, transparent 48%, rgba(255,255,255,.04) 49%, rgba(255,255,255,.04) 51%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, rgba(255,255,255,.04) 49%, rgba(255,255,255,.04) 51%, transparent 52%);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ================================================================
+   HERO SECTION
+   - Full-viewport gym background
+   - Dark overlay
+   - Centered logo + nav
+   - Woman overlaps bottom-right, extending into fitness section
+   ================================================================ */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('/fitness/1.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;          /* let woman overflow downward */
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.58);
+  z-index: 1;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-top: -8%;
+}
+
+.hero__logo {
+  font-size: clamp(5rem, 12vw, 11rem);
+  font-weight: 800;
+  color: #FF6B35;
+  letter-spacing: -6px;
+  text-transform: lowercase;
+  line-height: .9;
+  margin-bottom: 1rem;
+}
+
+.hero__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: #fff;
+  font-size: clamp(.55rem, 1.1vw, .85rem);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.hero__dot {
+  font-size: .4rem;
+  opacity: .6;
+}
+
+/* Woman — overlaps from hero bottom-right into fitness section */
+.hero__woman {
+  position: absolute;
+  bottom: -50%;
+  right: 0;
+  width: 52%;
+  max-width: 650px;
+  z-index: 10;
+  display: block;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* ================================================================
+   FITNESS SECTION — two-column: left content + right woman
+   ================================================================ */
+.fitness {
+  position: relative;
+  background: #000;
+  z-index: 1;
+  padding-top: 0;
+}
+
+/* Main two-column grid */
+.fitness__grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 48% 52%;
+}
+
+/* ---- LEFT COLUMN ---- */
+.fitness__left {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2rem;
+}
+
+/* Brand row: logo + orange stripe */
+.fitness__brand-row {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding-left: 2rem;
+}
+
+.fitness__brand {
+  flex-shrink: 0;
+  padding-right: 1.2rem;
+}
+
+.fitness__brand-logo {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: #FF6B35;
+  letter-spacing: -3px;
+  text-transform: lowercase;
+  line-height: 1;
+}
+
+.fitness__brand-sub {
+  display: block;
+  font-size: .55rem;
+  letter-spacing: 3.5px;
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+.fitness__orange-bar {
+  flex: 1;
+  height: 70px;
+  background: #FF6B35;
+}
+
+/* Description box */
+.fitness__desc-box {
+  border: 2.5px solid #FF6B35;
+  border-radius: 10px;
+  padding: 1.5rem 1.6rem;
+  margin: 1.5rem 2rem 0;
+}
+
+.fitness__desc-box p {
+  font-size: clamp(.78rem, 1.3vw, 1rem);
+  line-height: 1.65;
+  color: #fff;
+}
+
+.fitness__tagline {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: .8rem;
+  margin-top: 1rem;
+  color: #FF6B35;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.fitness__tagline-dash { font-weight: 400; }
+.fitness__tagline-italic { font-style: italic; }
+
+/* ---- RIGHT COLUMN: woman filling entire height ---- */
+.fitness__right {
+  position: relative;
+  overflow: visible;
+  margin-bottom: -400px;  /* woman extends into gallery section */
+  z-index: 5;
+}
+
+.fitness__woman {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: top right;
+  display: block;
+}
+
+/* ---- Gallery Section: full width, staggered, with woman's legs visible ---- */
+.fitness__gallery-section {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 48% 52%;
+  gap: 2rem;
+  padding: 0 2rem;
+  margin-top: -2rem;
+}
+
+.fitness__gallery-left {
+  border: 3px solid #FF6B35;
+  border-radius: 10px;
+  overflow: hidden;
+  align-self: start;
+}
+
+.fitness__gallery-right {
+  border: 3px solid #FF6B35;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 8rem;
+  align-self: start;
+}
+
+.fitness__gallery-left img,
+.fitness__gallery-right img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* ---- Bottom area: weights + phone + insta CTA ---- */
+.fitness__bottom {
+  position: relative;
+  z-index: 1;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  padding: 4rem 3rem;
+  overflow: hidden;
+}
+
+.fitness__decor-left {
+  position: absolute;
+  left: -8%;
+  bottom: 15%;
+  width: 45%;
+  max-width: 400px;
+  opacity: .45;
+  z-index: 0;
+}
+
+.fitness__decor-right {
+  position: absolute;
+  right: -5%;
+  top: 15%;
+  width: 50%;
+  max-width: 500px;
+  opacity: .4;
+  z-index: 0;
+}
+
+/* Phone mockup */
+.fitness__phone-wrapper {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.fitness__phone {
+  width: 250px;
+  background: #111;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 3px solid #333;
+}
+
+.fitness__phone-screenshot {
+  width: 100%;
+  display: block;
+}
+
+/* Instagram CTA next to phone */
+.fitness__insta-cta {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .8rem;
+}
+
+.fitness__insta-icon-wrap {
+  width: 80px;
+  height: 80px;
+  border: 3px solid #fff;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fitness__insta-handle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.fitness__insta-tap {
+  font-size: 1.1rem;
+  color: #FF6B35;
+  font-weight: 600;
+}
+
+/* Orange Instagram banner */
+.fitness__insta-banner {
+  position: relative;
+  z-index: 2;
+  background: #FF6B35;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+}
+
+.fitness__insta-banner-name {
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: #fff;
+}
+
+/* ================================================================
+   NUTRITION SECTION
+   ================================================================ */
+.nutrition {
+  position: relative;
+  background: #000;
+}
+
+/* ---- Hero area with lime sidebar + background image ---- */
+.nutrition__hero {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.nutrition__lime-sidebar {
+  width: 60px;
+  background: #C5E519;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.nutrition__hero-images {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.nutrition__hero-img1 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.nutrition__hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.nutrition__hero-logo {
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 800;
+  color: #C5E519;
+  letter-spacing: -4px;
+  text-transform: lowercase;
+  line-height: 1;
+}
+
+.nutrition__hero-sub {
+  font-size: .65rem;
+  letter-spacing: 4px;
+  color: #C5E519;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+/* ---- Brand row with lime bar ---- */
+.nutrition__brand-row {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding-left: 2rem;
+}
+
+.nutrition__brand {
+  flex-shrink: 0;
+  padding-right: 1.2rem;
+}
+
+.nutrition__brand-logo {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: #C5E519;
+  letter-spacing: -3px;
+  text-transform: lowercase;
+  line-height: 1;
+}
+
+.nutrition__brand-sub {
+  display: block;
+  font-size: .55rem;
+  letter-spacing: 3.5px;
+  color: #C5E519;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+.nutrition__lime-bar {
+  flex: 1;
+  height: 70px;
+  background: #C5E519;
+}
+
+/* ---- Food image row ---- */
+.nutrition__food-row {
+  position: relative;
+  z-index: 2;
+}
+
+.nutrition__food-img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  max-height: 400px;
+}
+
+/* ---- Description box ---- */
+.nutrition__desc-wrapper {
+  position: relative;
+  z-index: 2;
+  padding: 1.5rem 2rem;
+}
+
+.nutrition__desc-box {
+  border: 2.5px solid #C5E519;
+  border-radius: 10px;
+  padding: 1.5rem 1.6rem;
+}
+
+.nutrition__desc-box p {
+  font-size: clamp(.78rem, 1.3vw, 1rem);
+  line-height: 1.65;
+  color: #fff;
+}
+
+.nutrition__tagline {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: .8rem;
+  margin-top: 1rem;
+  color: #C5E519;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.nutrition__tagline-dash { font-weight: 400; }
+.nutrition__tagline-italic { font-style: italic; }
+
+/* ---- Gallery ---- */
+.nutrition__gallery {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 0 2rem 2rem;
+}
+
+.nutrition__gallery-item {
+  border: 3px solid #C5E519;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.nutrition__gallery-item img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* ---- Food items ---- */
+.nutrition__food-items {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  padding: 0;
+}
+
+.nutrition__food-item-left,
+.nutrition__food-item-right {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* ---- Bottom: phone + insta CTA ---- */
+.nutrition__bottom {
+  position: relative;
+  z-index: 1;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 3rem 2rem;
+  overflow: hidden;
+}
+
+.nutrition__phone-wrapper {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.nutrition__phone {
+  width: 250px;
+  background: #111;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 3px solid #333;
+}
+
+.nutrition__phone-screenshot {
+  width: 100%;
+  display: block;
+}
+
+.nutrition__insta-cta {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .8rem;
+}
+
+.nutrition__insta-icon-wrap {
+  width: 80px;
+  height: 80px;
+  border: 3px solid #fff;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nutrition__insta-handle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.nutrition__insta-tap {
+  font-size: 1.1rem;
+  color: #C5E519;
+  font-weight: 600;
+}
+
+/* Lime Instagram banner */
+.nutrition__insta-banner {
+  position: relative;
+  z-index: 2;
+  background: #C5E519;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+}
+
+.nutrition__insta-banner-name {
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: #000;
+}
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+@media (max-width: 768px) {
+  .hero__logo { font-size: 4.5rem; letter-spacing: -4px; }
+  .hero__nav { font-size: .55rem; gap: .5rem; flex-wrap: wrap; }
+  .hero__woman { width: 55%; bottom: -100px; }
+
+  .fitness__desc-wrapper { max-width: 100%; }
+  .fitness__gallery { grid-template-columns: 1fr; gap: 1.5rem; }
+  .fitness__gallery-right { margin-top: 0; }
+  .fitness__bottom { flex-direction: column; gap: 2rem; min-height: auto; padding: 2rem 1rem; }
+  .fitness__phone { width: 200px; }
+
+  .nutrition__hero { min-height: 300px; }
+  .nutrition__gallery { grid-template-columns: 1fr; }
+  .nutrition__bottom { flex-direction: column; gap: 2rem; min-height: auto; }
+  .nutrition__phone { width: 200px; }
+}
