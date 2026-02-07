@@ -40,7 +40,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: visible;          /* let woman overflow downward */
+  overflow: visible;
 }
 
 .hero__overlay {
@@ -84,18 +84,6 @@
   opacity: .6;
 }
 
-/* Woman — overlaps from hero bottom-right into fitness section */
-.hero__woman {
-  position: absolute;
-  bottom: -50%;
-  right: 0;
-  width: 52%;
-  max-width: 650px;
-  z-index: 10;
-  display: block;
-  object-fit: contain;
-  pointer-events: none;
-}
 
 /* ================================================================
    FITNESS SECTION — two-column: left content + right woman
@@ -192,15 +180,20 @@
 .fitness__right {
   position: relative;
   overflow: visible;
-  margin-bottom: -400px;  /* woman extends into gallery section */
+  margin-bottom: -140px;
   z-index: 5;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-right: 2.5rem;
 }
 
 .fitness__woman {
-  width: 100%;
+  width: 90%;
+  max-width: 520px;
   height: auto;
   object-fit: contain;
-  object-position: top right;
+  object-position: bottom right;
   display: block;
 }
 
@@ -241,48 +234,61 @@
 .fitness__bottom {
   position: relative;
   z-index: 1;
-  min-height: 700px;
+  min-height: 520px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4rem;
-  padding: 4rem 3rem;
+  padding: 3rem 2rem;
   overflow: hidden;
+  margin-top: 3rem;
+}
+
+.fitness__bottom-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  max-width: 1200px;
 }
 
 .fitness__decor-left {
   position: absolute;
-  left: -8%;
-  bottom: 15%;
-  width: 45%;
-  max-width: 400px;
-  opacity: .45;
+  left: -5%;
+  bottom: 10%;
+  width: 40%;
+  max-width: 450px;
+  opacity: .5;
   z-index: 0;
+  filter: brightness(0.8);
 }
 
 .fitness__decor-right {
   position: absolute;
-  right: -5%;
-  top: 15%;
-  width: 50%;
+  right: -3%;
+  top: 10%;
+  width: 45%;
   max-width: 500px;
-  opacity: .4;
+  opacity: .45;
   z-index: 0;
+  filter: brightness(0.8);
 }
 
 /* Phone mockup */
 .fitness__phone-wrapper {
   position: relative;
-  z-index: 2;
   flex-shrink: 0;
+  margin-right: -40px;
+  z-index: 3;
 }
 
 .fitness__phone {
-  width: 250px;
-  background: #111;
-  border-radius: 28px;
+  width: 260px;
+  background: #1a1a1a;
+  border-radius: 35px;
   overflow: hidden;
-  border: 3px solid #333;
+  border: 4px solid #2a2a2a;
+  box-shadow: 0 20px 60px rgba(0,0,0,.6);
 }
 
 .fitness__phone-screenshot {
@@ -290,54 +296,44 @@
   display: block;
 }
 
-/* Instagram CTA next to phone */
-.fitness__insta-cta {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: .8rem;
-}
-
-.fitness__insta-icon-wrap {
-  width: 80px;
-  height: 80px;
-  border: 3px solid #fff;
-  border-radius: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.fitness__insta-handle {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #fff;
-}
-
-.fitness__insta-tap {
-  font-size: 1.1rem;
-  color: #FF6B35;
-  font-weight: 600;
-}
-
-/* Orange Instagram banner */
+/* Orange Instagram banner (now combined with CTA) */
 .fitness__insta-banner {
   position: relative;
   z-index: 2;
   background: #FF6B35;
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 1.5rem;
-  padding: 1.5rem 2rem;
+  padding: 2rem 3rem 2rem 4.5rem;
+  border-radius: 0 22px 22px 0;
+  min-width: 560px;
 }
 
-.fitness__insta-banner-name {
-  font-size: clamp(1.4rem, 3vw, 2.2rem);
+.fitness__insta-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.fitness__insta-handle {
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
   font-weight: 700;
   color: #fff;
+  line-height: 1;
+}
+
+.fitness__insta-tap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.05rem;
+  color: #fff;
+  font-weight: 500;
+  margin-top: 0.3rem;
+}
+
+.fitness__tap-icon {
+  font-size: 1.2rem;
 }
 
 /* ================================================================

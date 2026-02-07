@@ -27,12 +27,6 @@ function Home() {
             <span>ELEVATED SPORTS</span>
           </nav>
         </div>
-        {/* Woman with barbell — positioned bottom-right, overlaps into fitness section */}
-        <img
-          src="/fitness/7.png"
-          alt="Woman with barbell"
-          className="hero__woman"
-        />
       </section>
 
       {/* =============================================
@@ -75,7 +69,7 @@ function Home() {
             </div>
           </div>
 
-          {/* RIGHT COLUMN: woman with barbell filling entire column */}
+          {/* RIGHT COLUMN: empty space for woman overlap */}
           <div className="fitness__right">
             <img
               src="/fitness/7.png"
@@ -108,33 +102,30 @@ function Home() {
             className="fitness__decor-right"
           />
 
-          <div className="fitness__phone-wrapper">
-            <div className="fitness__phone">
-              <img
-                src="/fitness/6.png"
-                alt="Instagram screenshot"
-                className="fitness__phone-screenshot"
-              />
+          <div className="fitness__bottom-content">
+            <div className="fitness__phone-wrapper">
+              <div className="fitness__phone">
+                <img
+                  src="/fitness/6.png"
+                  alt="Instagram profile"
+                  className="fitness__phone-screenshot"
+                />
+              </div>
             </div>
-          </div>
 
-          <div className="fitness__insta-cta">
-            <div className="fitness__insta-icon-wrap">
-              <svg viewBox="0 0 24 24" fill="white" width="60" height="60">
+            <div className="fitness__insta-banner">
+              <svg viewBox="0 0 24 24" fill="white" width="100" height="100">
                 <path d={IG_PATH} />
               </svg>
+              <div className="fitness__insta-text">
+                <span className="fitness__insta-handle">thehyphenfitness</span>
+                <div className="fitness__insta-tap">
+                  <span className="fitness__tap-icon">👆</span>
+                  <span>TAP HERE</span>
+                </div>
+              </div>
             </div>
-            <span className="fitness__insta-handle">thehyphenfitness</span>
-            <span className="fitness__insta-tap">👆 TAP HERE</span>
           </div>
-        </div>
-
-        {/* Orange Instagram banner */}
-        <div className="fitness__insta-banner">
-          <svg viewBox="0 0 24 24" fill="white" width="55" height="55">
-            <path d={IG_PATH} />
-          </svg>
-          <span className="fitness__insta-banner-name">thehyphenfitness</span>
         </div>
       </section>
 
