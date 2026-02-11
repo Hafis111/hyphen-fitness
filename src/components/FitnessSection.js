@@ -6,7 +6,10 @@ const IG_PATH =
 
 function FitnessSection() {
   return (
-    <section className="relative w-full bg-black overflow-hidden" style={{ zIndex: 0 }}>
+    <section
+      className="relative w-full bg-black overflow-hidden"
+      style={{ zIndex: 0 }}
+    >
       {/* Diamond / mesh pattern background */}
       <div
         className="absolute inset-0 z-0"
@@ -21,7 +24,10 @@ function FitnessSection() {
       {/* ── Brand row: logo + "ELEVATED FITNESS" + orange bar ── */}
       <div className="relative z-10 flex items-stretch bg-black">
         {/* Logo + sub-label */}
-        <div className="flex flex-col justify-center flex-shrink-0" style={{ paddingLeft: "1.5rem", paddingRight: "1rem" }}>
+        <div
+          className="flex flex-col justify-center flex-shrink-0"
+          style={{ paddingLeft: "1.5rem", paddingRight: "1rem" }}
+        >
           <HyphenLogo
             style={{
               fill: "#E16626",
@@ -32,7 +38,11 @@ function FitnessSection() {
           />
           <span
             className="block text-white uppercase"
-            style={{ fontSize: "clamp(0.38rem, 0.7vw, 0.55rem)", letterSpacing: "3.5px", marginTop: "3px" }}
+            style={{
+              fontSize: "clamp(0.38rem, 0.7vw, 0.55rem)",
+              letterSpacing: "3.5px",
+              marginTop: "3px",
+            }}
           >
             ELEVATED FITNESS
           </span>
@@ -45,13 +55,19 @@ function FitnessSection() {
         />
       </div>
 
-      {/* ── Main grid: description left | woman space right ── */}
-      <div className="relative z-10 grid grid-cols-2">
-        {/* Left — description box; bg-black hides woman behind the text */}
-        <div className="flex flex-col justify-start px-6 pt-6 pb-6">
+      {/* ── Main content: description box left with woman overlapping from right ── */}
+      <div className="relative z-10 pt-6 pb-6 pl-6">
+        {/* Description box positioned on the left */}
+        <div
+          className="relative"
+          style={{ maxWidth: "clamp(850px, 80vw, 1150px)", zIndex: 5 }}
+        >
           <div
             className="rounded-xl bg-black"
-            style={{ border: "2px solid #E16626", padding: "clamp(1rem, 2vw, 1.6rem)" }}
+            style={{
+              border: "2px solid #E16626",
+              padding: "clamp(1rem, 2vw, 1.6rem)",
+            }}
           >
             <p
               className="text-white leading-relaxed"
@@ -69,41 +85,70 @@ function FitnessSection() {
             {/* Tagline */}
             <div
               className="flex items-center justify-end gap-3 mt-4 font-bold uppercase"
-              style={{ color: "#E16626", fontSize: "clamp(0.9rem, 1.8vw, 1.4rem)" }}
+              style={{
+                color: "#E16626",
+                fontSize: "clamp(0.9rem, 1.8vw, 1.4rem)",
+              }}
             >
               <span>POTENTIAL</span>
-              <span className="font-normal" style={{ letterSpacing: "0.2em" }}>———</span>
+              <span className="font-normal" style={{ letterSpacing: "0.2em" }}>
+                ———
+              </span>
               <span className="italic">PERFORMANCE</span>
             </div>
           </div>
         </div>
-
-        {/* Right — empty; woman from HeroSection overlaps here */}
-        <div style={{ minHeight: "clamp(500px, 65vh, 680px)" }} />
       </div>
 
       {/* ── Gallery: two bordered images ── */}
       <div
-        className="relative z-10 grid grid-cols-2 px-6 pb-6 mt-2 bg-black"
+        className="relative z-10 grid grid-cols-2 px-6 pb-6 mt-2"
         style={{ gap: "clamp(1rem, 2vw, 2rem)" }}
       >
         {/* Gallery item 1 */}
-        <div className="rounded-xl overflow-hidden" style={{ border: "3px solid #E16626" }}>
+        <div
+          className="relative rounded-xl overflow-hidden z-10"
+          style={{ height: "clamp(280px, 35vw, 400px)" }}
+        >
           <img
             src="/fitness-section/treadmills.png"
             alt="Gym treadmills"
-            className="w-full object-cover block"
-            style={{ aspectRatio: "4/3" }}
+            className="w-full h-full block"
+            style={{
+              objectFit: "cover",
+              objectPosition: "center 30%",
+            }}
+          />
+          {/* Half border - top and left */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              borderTop: "5px solid #E16626",
+              borderLeft: "5px solid #E16626",
+              borderRadius: "0.75rem",
+            }}
           />
         </div>
 
         {/* Gallery item 2 — offset down */}
-        <div className="rounded-xl overflow-hidden" style={{ border: "3px solid #E16626", marginTop: "5rem" }}>
+        <div
+          className="relative rounded-xl overflow-hidden z-10"
+          style={{ marginTop: "11rem" }}
+        >
           <img
             src="/fitness-section/training.png"
             alt="Training session"
             className="w-full object-cover block"
             style={{ aspectRatio: "4/3" }}
+          />
+          {/* Half border - bottom and right */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              borderBottom: "5px solid #E16626",
+              borderRight: "5px solid #E16626",
+              borderRadius: "0.75rem",
+            }}
           />
         </div>
       </div>
@@ -144,7 +189,10 @@ function FitnessSection() {
         />
 
         {/* Phone mockup */}
-        <div className="relative z-[2] flex-shrink-0" style={{ marginRight: "-2rem" }}>
+        <div
+          className="relative z-[2] flex-shrink-0"
+          style={{ marginRight: "-2rem" }}
+        >
           <div
             className="bg-[#111] overflow-hidden"
             style={{
@@ -154,8 +202,16 @@ function FitnessSection() {
               boxShadow: "0 20px 60px rgba(0,0,0,0.6)",
             }}
           >
-            <img src="/fitness/8.png" alt="Instagram profile" className="w-full block" />
-            <img src="/fitness/9.png" alt="Instagram feed" className="w-full block" />
+            <img
+              src="/fitness/8.png"
+              alt="Instagram profile"
+              className="w-full block"
+            />
+            <img
+              src="/fitness/9.png"
+              alt="Instagram feed"
+              className="w-full block"
+            />
           </div>
         </div>
 
@@ -173,7 +229,13 @@ function FitnessSection() {
           }}
         >
           {/* Instagram icon */}
-          <svg viewBox="0 0 24 24" fill="white" width="64" height="64" className="flex-shrink-0">
+          <svg
+            viewBox="0 0 24 24"
+            fill="white"
+            width="64"
+            height="64"
+            className="flex-shrink-0"
+          >
             <path d={IG_PATH} />
           </svg>
 
@@ -187,7 +249,10 @@ function FitnessSection() {
             </span>
             <div
               className="flex items-center text-white font-medium"
-              style={{ gap: "0.5rem", fontSize: "clamp(0.75rem, 1.1vw, 0.95rem)" }}
+              style={{
+                gap: "0.5rem",
+                fontSize: "clamp(0.75rem, 1.1vw, 0.95rem)",
+              }}
             >
               <span>👆</span>
               <span>TAP HERE</span>

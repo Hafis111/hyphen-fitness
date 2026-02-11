@@ -94,16 +94,17 @@ function HeroSection() {
         </nav>
       </div>
 
-      {/* Woman with barbell — bottom-right, overflows into fitness section */}
+      {/* Woman with barbell — right side, extends beyond screen, overlaps fitness section */}
       <img
         src="/hero/woman.png"
         alt="Woman with barbell"
-        className="absolute bottom-0 right-0 z-[6] w-auto pointer-events-none select-none"
+        className="absolute bottom-0 z-[6] w-auto pointer-events-none select-none"
         style={{
+          right: "-17%",
           height: "clamp(800px, 110vh, 1300px)",
           objectFit: "contain",
           objectPosition: "bottom right",
-          transform: "translateY(62%)",
+          transform: "translateY(68%)",
         }}
       />
     </section>
