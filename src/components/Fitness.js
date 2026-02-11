@@ -7,10 +7,23 @@ function Fitness() {
       <div className="diamond-pattern"></div>
 
       {/* Hero Section */}
-      <div className="hero-section">
-        <h1 className="main-logo">hyphen</h1>
-        <div className="orange-stripe"></div>
-      </div>
+      <section className="fitness-hero">
+        <div className="fitness-hero__overlay"></div>
+        <div className="fitness-hero__content">
+          <h1 className="fitness-hero__logo">hyphen</h1>
+          <nav className="fitness-hero__nav">
+            <span>ELEVATED FITNESS</span>
+            <span className="fitness-hero__dot">●</span>
+            <span>ELEVATED WELLNESS</span>
+            <span className="fitness-hero__dot">●</span>
+            <span>ELEVATED NUTRITION</span>
+            <span className="fitness-hero__dot">●</span>
+            <span>ELEVATED PILATES</span>
+            <span className="fitness-hero__dot">●</span>
+            <span>ELEVATED SPORTS</span>
+          </nav>
+        </div>
+      </section>
 
       {/* Description Box */}
       <div className="description-section">
