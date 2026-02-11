@@ -105,6 +105,36 @@ function FitnessSection() {
         className="relative z-10 grid grid-cols-2 px-6 pb-6 mt-2"
         style={{ gap: "clamp(1rem, 2vw, 2rem)" }}
       >
+        {/* Decorative weight plate near first image */}
+        <img
+          src="/fitness-section/weight-plate.png"
+          alt=""
+          className="absolute z-0"
+          style={{
+            left: "0%",
+            bottom: "-1%",
+            width: "36%",
+            maxWidth: "320px",
+            opacity: 0.4,
+            filter: "brightness(0.75)",
+          }}
+        />
+
+        {/* Decorative dumbbell near second image */}
+        <img
+          src="/fitness-section/dumbbell.png"
+          alt=""
+          className="absolute z-0"
+          style={{
+            right: "0%",
+            bottom: "-10%",
+            width: "38%",
+            maxWidth: "350px",
+            opacity: 0.5,
+            filter: "brightness(0.75)",
+          }}
+        />
+
         {/* Gallery item 1 */}
         <div
           className="relative rounded-xl overflow-hidden z-10"
@@ -153,41 +183,11 @@ function FitnessSection() {
         </div>
       </div>
 
-      {/* ── Bottom: decorative dumbbells + phone + instagram ── */}
+      {/* ── Bottom: phone + instagram ── */}
       <div
         className="relative z-10 flex items-center justify-center px-6 py-12"
         style={{ minHeight: "420px", gap: 0 }}
       >
-        {/* Decorative dumbbell — bottom left */}
-        <img
-          src="/fitness-section/dumbbell.png"
-          alt=""
-          className="absolute z-0"
-          style={{
-            left: "-3%",
-            bottom: "8%",
-            width: "38%",
-            maxWidth: "380px",
-            opacity: 0.5,
-            filter: "brightness(0.75)",
-          }}
-        />
-
-        {/* Decorative weight plate — top right */}
-        <img
-          src="/fitness-section/weight-plate.png"
-          alt=""
-          className="absolute z-0"
-          style={{
-            right: "-2%",
-            top: "6%",
-            width: "36%",
-            maxWidth: "380px",
-            opacity: 0.4,
-            filter: "brightness(0.75)",
-          }}
-        />
-
         {/* Phone mockup */}
         <div
           className="relative z-[2] flex-shrink-0"
