@@ -12,65 +12,46 @@ const NAV_ITEMS = [
 function HeroSection() {
   return (
     <section
-      className="relative w-full overflow-visible bg-black"
-      style={{ height: "100vh", minHeight: "600px", zIndex: 1 }}
+      className="relative bg-black"
+      style={{
+        height: "100vh",
+        minHeight: "600px",
+        width: "100%",
+        margin: 0,
+        padding: 0,
+        overflow: "visible",
+      }}
     >
-      {/* Background gym image — grayscale + dark, via CSS background */}
-      <div
+      {/* Background gym image — grayscale + dark */}
+      <img
+        src="/fitness/5-cropped.png"
+        alt=""
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: "url('/hero/bg.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          filter: "grayscale(100%) contrast(1.08) brightness(0.7)",
-          transform: "scale(1.02)",
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          objectPosition: "center",
+          filter: "grayscale(100%) contrast(1.08) brightness(0.85)",
+          display: "block",
+        }}
+      />
+
+      {/* Dark overlay */}
+      <div
+        className="absolute inset-0 z-[1]"
+        style={{
+          background: "rgba(0,0,0,0.55)",
         }}
       />
 
       {/* Diamond / mesh pattern overlay */}
       <div
-        className="absolute inset-0 z-[1] opacity-30"
+        className="absolute inset-0 z-[2] opacity-10"
         style={{
           backgroundImage: `url('/hero/diamond-pattern.png')`,
           backgroundRepeat: "repeat",
-          backgroundSize: "320px",
-        }}
-      />
-
-      {/* Vignette — top fade */}
-      <div
-        className="absolute inset-x-0 top-0 z-[2]"
-        style={{
-          height: "40%",
-          background: "linear-gradient(to bottom, rgba(0,0,0,0.95), rgba(0,0,0,0.5) 60%, transparent)",
-        }}
-      />
-
-      {/* Vignette — bottom fade */}
-      <div
-        className="absolute inset-x-0 bottom-0 z-[2]"
-        style={{
-          height: "40%",
-          background: "linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.5) 60%, transparent)",
-        }}
-      />
-
-      {/* Vignette — left fade */}
-      <div
-        className="absolute inset-y-0 left-0 z-[2]"
-        style={{
-          width: "25%",
-          background: "linear-gradient(to right, rgba(0,0,0,0.8), transparent)",
-        }}
-      />
-
-      {/* Vignette — right fade */}
-      <div
-        className="absolute inset-y-0 right-0 z-[2]"
-        style={{
-          width: "25%",
-          background: "linear-gradient(to left, rgba(0,0,0,0.8), transparent)",
+          backgroundSize: "30px",
         }}
       />
 
